@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>ECSHOP 管理中心 - 添加新商品 </title>
+<meta name="robots" content="noindex, nofollow">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="../view/admin/styles/general.css" rel="stylesheet" type="text/css" />
+<link href="../view/admin/styles/main.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+    <form method="POST" action="info_Edit_Act.php" enctype="Multipart/form-data">
+        <table border="1">
+        <?php foreach($data as $k=>$v){?>
+            <tr>
+                <tr>
+                    <td><input type="text" readonly="readonly" style="font-size:16px;border:none" name="title_<?php echo $k; ?>" size="30" value="<?php echo $v['title']; ?>" /></td><td><input type="text" readonly="readonly" style="font-size:16px;border:none" name="contact_<?php echo $k; ?>" size="11" value="<?php echo $v['contact']; ?>" /></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><textarea readonly="readonly" cols="50" rows="10" style="font-size:16px; border:none" name="content_<?php echo $k; ?>"><?php echo $v['content']; ?></textarea></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                    <?php foreach($cat_list as $key=>$c){?>
+                        <input id="for<?php echo $k . $c['cat_id']; ?>" type="radio" name="cat_id_<?php echo $k;?>" value="<?php echo $c['cat_id']; ?>" /><label for="for<?php echo $k . $c['cat_id']; ?>"><?php echo $c['cat_name']; ?></label>
+                    <?php } ?>
+
+                    </td>
+                </tr>
+            </tr>
+
+            <input type="hidden" value="<?php echo $v['post_user']; ?>" name="post_user_<?php echo $k; ?>" />
+            <input type="hidden" value="<?php echo $v['add_time']; ?>" name="add_time_<?php echo $k; ?>" />
+            <input type="hidden" value="<?php echo $v['del_time']; ?>" name="del_time_<?php echo $k; ?>" />
+
+            <input type="hidden" value="<?php echo $v['contact_img']; ?>" name="contact_img_<?php echo $k; ?>" />
+            <input type="hidden" value="<?php echo $v['del_key']; ?>" name="del_key_<?php echo $k; ?>" />
+
+            <?php } ?>
+        </table>
+        <input type="hidden" value="addmore_act" name="act"/>
+        <input type="submit" value="提交" />
+    </form>
+</body>

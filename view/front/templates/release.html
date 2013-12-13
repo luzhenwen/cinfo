@@ -1,0 +1,83 @@
+<?php include(ROOT . 'view/front/templates/head.html'); ?>
+<script type="text/javascript" src="/view/front/js/swfupload.js"></script>
+<script type="text/javascript" src="/view/front/js/swfupload.queue.js"></script>
+<div id="release_fm">
+
+    <p>发布新的信息</p>
+    <div id="category_box">
+        <div class="label">选择信息分类：</div>
+        <select name="cat_id" id="category_input" size="1">
+            <option selected="selected" value="0">选择信息分类</option>
+            <?php foreach($cat_list as $cl){?>
+            <option value="<?php echo $cl['cat_id'];?>">
+                <?php echo str_repeat('&nbsp;',$cl['lev']) . $cl['cat_name']; ?>
+            </option>
+            <?php }?>
+        </select>
+        <span id="category_msg">请选择分类</span>
+    </div>
+    <div id="title_box">
+        <div class="label">信息标题：</div>
+        <input type="text" id="title_input" name="title" maxlength="9"/>
+        <span id="title_msg">2-9个字</span>
+    </div>
+    <div id="content_box">
+        <div class="label">信息内容：</div>
+        <textarea id="content_input" name="content" rows="10"  ></textarea>
+            <span id="content_msg">10~800字之间，请勿填写联系电话、QQ等联系方式或特殊符号，否则信息将会被删除</span>
+    </div>
+
+    <div id="filearea">
+        <span>上传图片，能够上传5张图片，每张大小不超过2M</span>
+        <ul id="pic_list">
+        </ul>
+        <div style="clear:both">
+            <div id="upbtn"></div>
+        </div>
+    </div>
+
+    <div id="contact_box">
+        <div class="label">联系电话：</div>
+        <input type="text" id="contact_input" name="contact" />
+        <span id="contact_msg">请填写联系电话，固话请加区号，如07717500000</span>
+    </div>
+
+    <div id="deltime_box">
+        <div class="label">信息有效时间：</div>
+        <select name="del_time" id="deltime_input">
+            <option value="604800">一星期</option>
+            <option value="1296000">半个月</option>
+            <option value="2592000">一个月</option>
+            <option value="5184000">两个月</option>
+            <option value="7776000">三个月</option>
+            <option value="15552000">六个月</option>
+        </select>
+        <span id="deltime_msg">请选择信息有效时间</span>
+    </div>
+
+    <div id="delkey_box">
+        <div class="label">删除密码：</div>
+        <input type="text" name="del_key" id="delkey_input" />
+        <span id="delkey_msg">请输入删除密码，不得小于4个字符</span>
+    </div>
+
+    <div id="chkcode_box">
+        <img src="/data/image/code.jpg" name="" width="150" height="50" /><br />
+        <input type="text" id="chkcode_input" name="chkcode" value="请输入验证码"/>
+    </div>
+
+    <input type="button" value="提交" id="release_submit"/>
+    <input type="hidden" value="<?php echo $unid; ?>" name="unid" />
+    <input type="hidden" name="uptoken" value="<?php echo $upToken; ?>" />
+    <input type="hidden" id="uploadedpic" name="uploaded_pic" value="" />
+
+
+</div>
+<div id="srceen">
+
+</div>
+<div id="response_msg">
+    <div id="close"></div>
+    <p>这里是服务器返回的信息</p>
+</div>
+<?php include(ROOT . 'view/front/templates/foot.html'); ?>

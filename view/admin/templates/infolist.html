@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>管理中心 - <?php echo $act == 'trash'? '被删除信息列表': '信息列表'?> </title>
+<meta name="robots" >
+<meta http-equiv="Content-Type"  />
+<link href="../view/admin/styles/general.css" rel="stylesheet" type="text/css" />
+<link href="../view/admin/styles/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<h1>
+<span class="action-span"><a href="goodsadd.html">添加新商品</a></span>
+<span class="action-span1"><a href="#">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1"> - <?php echo $act == 'trash'? '被删除信息列表': '信息列表'?> </span>
+<div style="clear:both"></div>
+</h1>
+
+<div class="form-div">
+
+  <form action="info_list.php" name="searchForm" method="GET">
+    <img src="../view/admin/images/icon_search.gif" width="26" height="22" border="0" alt="SEARCH" />
+
+    <select name="cat_id">
+        <option value="0">所有分类</option>
+        <?php ?>
+        <?php
+            if(isset($_POST['admin_search'])){
+                foreach ($cat_list as $cl){
+        ?>
+                <option value="<?php echo $cl['cat_id']; ?>" <?php echo $cat_id==$cl['cat_id'] ? 'selected="selected"' : ''?>><?php echo str_repeat('&nbsp;',$cl['lev']) . $cl['cat_name']; ?></option>
+
+        <?php
+                }
+            }else{
+                foreach ($cat_list as $cl){
+        ?>
+                <option value="<?php echo $cl['cat_id']; ?>" ><?php echo str_repeat('&nbsp;',$cl['lev']) . $cl['cat_name']; ?></option>
+        <?php
+                }
+            }
+        ?>
+
+    </select>
+    关键字 <input type="text" name="keyword" size="15" />
+        <select name="type">
+            <option value="title">标题</option>
+            <option value="info_id">ID</option>
+            <option value="contact">手机号</option>
+        </select>
+    <input type="submit" value=" 搜索 " class="button" />
+    <input type="hidden" value="admin_search" name="admin_search" />
+    <input type="hidden" value="<?php echo $act; ?>" name="act" />
+  </form>
+</div>
+<form method="post" action="" name="listForm" >
+
+  <div class="list-div" id="listDiv">
+<table cellpadding="3" cellspacing="1">
+  <tr>
+    <th>
+      <input onclick='listTable.selectAll(this, "checkboxes")' type="checkbox" />
+      <a href="#">编号</a><img src="../view/admin/images/sort_desc.gif"/>    </th>
+
+    <th><a href="#">商品名称</a></th>
+    <th><a href="#">发布者</a></th>
+    <th><a href="#">联系电话</a></th>
+    <th><a href="#">分类</a></th>
+    <th><a href="#">添加时间</a></th>
+    <th><a href="#">删除时间</a></th>
+    <th><a href="#">热销</a></th>
+    <th><a href="#">推荐排序</a></th>
+        <th><a href="#">发布者IP</a></th>
+        <th>操作</th>
+       <?php foreach($info_list as $i){?>
+  <tr>
+      <tr>
+    <td><input type="checkbox" name="checkboxes[]" value="<?php echo $i['info_id']; ?>" /><?php echo $i['info_id']; ?></td>
+
+    <td class="first-cell" style=""><span ><?php echo $i['title']; ?></span></td>
+    <td align="center"><span ><?php echo $i['post_user']; ?></span></td>
+    <td align="center"><span ><?php echo $i['contact']; ?></span></td>
+    <td align="center"><?php echo $i['cat_name']; ?></td>
+    <td align="center"><?php echo date('y-m-d H:i:s',$i['add_time']); ?></td>
+    <td align="center"><?php echo date('y-m-d H:i:s',$i['del_time']); ?></td>
+    <td align="center"><img src="../view/admin/images/yes.gif"  /></td>
+
+    <td align="center"><span ><?php echo $i['post_order']; ?></span></td>
+        <td align="center"><span ><?php echo $i['post_ip']; ?></span></td>
+        <td align="center">
+      <a href="/<?php echo $i['info_id']; ?>" target="_blank" title="查看"><img src="../view/admin/images/icon_view.gif" width="16" height="16" border="0" /></a>
+      <a href="info_Edit.php?act=edit&info_id=<?php echo $i['info_id']; ?>" title="编辑"><img src="../view/admin/images/icon_edit.gif" width="16" height="16" border="0" /></a>
+      <a href="#" title="复制"><img src="../view/admin/images/icon_copy.gif" width="16" height="16" border="0" /></a>
+      <a href="info_Edit_Act.php?act=del&info_id=<?php echo $i['info_id']; ?>"  title="回收站"><img src="../view/admin/images/icon_trash.gif" width="16" height="16" border="0" /></a>
+      <a href="#" title="货品列表"><img src="../view/admin/images/icon_docs.gif" width="16" height="16" border="0" /></a>          </td>
+  </tr>
+  </tr>
+  <?php }?>
+
+
+      </table>
+
+<table id="page-table" cellspacing="0">
+  <tr>
+    <td align="right" nowrap="true">
+
+
+          <!--上页&nbsp;&nbsp;1</b>&lt;&lt; [1]&nbsp;&nbsp;<a href=admin.php?c=goods&a=goodsList&page=2& title='第2页'>[2]</a>&nbsp;&nbsp;<a href=admin.php?c=goods&a=goodsList&page=3& title='第3页'>[3]</a>&nbsp;&nbsp;<a href=admin.php?c=goods&a=goodsList&page=4& title='第4页'>[4]</a>&nbsp;&nbsp;<a href=admin.php?c=goods&a=goodsList&page=5& title='第5页'>[5]</a>&nbsp;&nbsp;<a href=admin.php?c=goods&a=goodsList&page=8& title='第8页'>&gt;&gt;8</a>&nbsp;<a href=admin.php?c=goods&a=goodsList&page=2&  title='下一页'>[下一页]</a>-->
+            <?php echo $nav; ?>
+    </td>
+  </tr>
+
+</table>
+
+</div>
+</form>
+
+<div id="footer">
+共执行 7 个查询，用时 0.112141 秒，Gzip 已禁用，内存占用 3.085 MB<br />
+版权所有 &copy; 2005-2010 上海商派网络科技有限公司，并保留所有权利。</div>
+</body>
+</html>

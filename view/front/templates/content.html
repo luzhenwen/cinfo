@@ -1,0 +1,43 @@
+<?php include(ROOT . 'view/front/templates/head.html'); ?>
+<div id="left_content">
+    <div id="delete">
+        <div id="head"><span id="tips">删除信息</span><span id="cancel"><img src="/view/front/image/cancel.png" /></span></div>
+        <div id="input_area">删除密码：<input type="text" id="del_key" /></div>
+        <div id="del_sub" iid="<?php echo $info_row['info_id']; ?>"></div>
+        <div id="del_msg"></div>
+    </div>
+    <div id="screen">
+    </div>
+
+    <div id="top_box">
+        <div id="title">
+            <h1><?php echo $info_row['title']; ?></h1>
+        </div>
+        <div id="info">
+            <span id="time"><?php echo date('m月j日 H:i',$info_row['add_time']); ?>发布</span>
+            <span id="zone">地区：扶绥县</span>
+            <span id="click">浏览 <?php echo $info_row['click_count']+1 ;?> 次</span>
+            <span id="operate">
+                <ul>
+                    <li class="operate_display"><a href="#">信息管理</a></li>
+                    <li><a href="javascript:;">删除帖子</a></li>
+                </ul>
+            </span>
+        </div>
+    </div>
+    <div id="bottom_box">
+        <pre><p><?php echo $info_row['content']; ?></p></pre>
+        <?php if(isset($pic_address) && !empty($pic_address)){ ?>
+        <?php foreach($pic_address as $pa){
+            $baseUrl = Qiniu_RS_MakeBaseUrl($domain, $pa);
+            $privateUrl = $getPolicy->MakeRequest($baseUrl, null);
+        ?> <img src="<?php echo $privateUrl;?>&imageView/2/w/700" />
+        <?php } }?>
+        <p>联系我时请说是在扶绥信息网看到的</p>
+        <div id="contact">联系电话：<img src="<?php echo $info_row['contact_img']; ?>"></div>
+    </div>
+</div>
+
+<div id="right_content">
+</div>
+<?php include(ROOT . 'view/front/templates/foot.html'); ?>

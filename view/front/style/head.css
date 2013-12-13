@@ -1,0 +1,255 @@
+*{
+    margin:0;
+    padding:0;
+    border:0;
+    font-size:12px;
+}
+
+body{
+    width:960px;
+    margin:0 auto;
+    background-color:#f1f0ef;
+}
+
+.msg{
+    color:red;
+    font-size:26px;
+    text-align:center;
+    margin:20px;
+}
+
+em{
+    font-style:normal;
+    color:red;
+}
+
+#head{
+    width:960px;
+    height:81px;
+}
+
+#logo{
+    width:230px;
+    height:75px;
+    float:left;
+    _display:inline;
+    margin-left:1px;
+    margin-top: 5px;
+}
+
+#search{
+    float:left;
+    margin-left:32px;
+    margin-top:23px;
+    _display:inline;
+    width:388px;
+    height:33px;
+
+}
+
+.search_input{
+    float:left;
+    width:301px;
+    font-size:20px;
+    border:1px solid #767777;
+    height:35px;
+}
+
+.search_button{
+    float:left;
+    width:82px;
+    height:37px;
+    border:1px solid #767777;
+    background:url(../image/search.png) no-repeat;
+    cursor: pointer;
+}
+
+.search_button:hover{
+    background:url(../image/search_hover.png) no-repeat;
+}
+
+#release{
+    float:left;
+    _display:inline;
+    margin-left:90px;
+    margin-top:13px;
+    width:180px;
+    height:61px;
+}
+
+#release a{
+    text-decoration:none;
+}
+#release a:visited{
+    color:#666666;
+}
+
+#release .fabu{
+    display:block;
+    width:175px;
+    height:40px;
+    background: url(../image/fabu.png) no-repeat;
+    margin-top:10px;
+}
+
+#release .fabu span{
+    font-size:22px;
+    font-weight:bold;
+    margin-left:32px;
+    line-height:170%;
+    color:#ffffff;
+}
+
+.blank{
+    border-bottom:1px solid #cccccc;
+    margin-top:2px;
+}
+
+#nav{
+    width:960px;
+    height:51px;
+}
+
+.nav{
+    float:left;
+    _display:inline;
+    margin-top:8px;
+    margin-left:9px;
+    width:118px;
+    height:35px;
+}
+
+.nav a{
+    display:block;
+    width:118px;
+    height:35px;
+}
+
+.part{
+    float:left;
+    _display:inline;
+    width:2px;
+    height:32px;
+    margin-left:9px;
+    margin-top:10px;
+    background:url(../image/part.png);
+}
+
+#sale_house{
+    width:118px;
+    height:35px;
+}
+
+#sale_house a{
+    background:url(../image/sale_house.png) no-repeat top left;
+}
+
+#sale_house a:hover{
+background:url(../image/sale_house_hover.png) no-repeat top left;
+}
+
+#house{
+    width:118px;
+    height:35px;
+}
+
+#house a{
+    background:url(../image/zufangzi.png) no-repeat top left;
+}
+
+#house a:hover{
+    background:url(../image/zufangzi_hover.png) no-repeat top left;
+}
+
+#front{
+    width:118px;
+    height:35px;
+}
+
+#front a{
+    background:url(../image/zhaopumian.png) no-repeat top left;
+}
+
+#front a:hover{
+    background:url(../image/zhaopumian_hover.png) no-repeat top left;
+}
+
+#job{
+    width:118px;
+    height:35px;
+}
+
+#job a{
+    background:url(../image/zhaogongzuo.png) no-repeat top left;
+}
+
+#job a:hover{
+    background:url(../image/zhaogongzuo_hover.png) no-repeat top left;
+}
+
+#local{
+    width:118px;
+    height:35px;
+}
+
+#local a{
+    background:url(../image/bendifuwu.png) no-repeat top left;
+}
+
+#local a:hover{
+    background:url(../image/bendifuwu_hover.png) no-repeat top left;
+}
+
+#info{
+    width:118px;
+    height:35px;
+}
+
+#info a{
+    background:url(../image/shangye.png) no-repeat top left;
+}
+
+#info a:hover{
+    background:url(../image/shangye_hover.png) no-repeat top left;
+}
+
+#used{
+    width:118px;
+    height:35px;
+}
+
+#used a{
+    background:url(../image/ershou.png) no-repeat top left;
+}
+
+#used a:hover{
+    background:url(../image/ershou_hover.png) no-repeat top left;
+}
+
+#foot{
+    float:left;
+    width:960px;
+    margin-top:20px;
+    margin-bottom:30px;
+}
+
+#line{
+    clear:both;
+    border-bottom:2px solid #999999;
+}
+
+#foot_text{
+    margin-top:20px;
+}
+
+
+#foot_text a , #foot_text{
+    text-align:right;
+    color:#999999;
+    text-decoration:none;
+    font-size:14px;
+}
+
+#foot_text a:hover{
+    text-decoration:underline;
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="http://libs.baidu.com/jquery/1.8.2/jquery.min.js"></script>
+<script type="text/javascript" src="/view/admin/js/adminadd.js"></script>
+<style type="text/css">
+body{
+	width: 1200px;
+}
+#input_area{
+	width: 500px;
+	float: left;
+}
+#input_area div{
+	float: left;
+}
+#title input{
+	width: 400px;
+	font-size: 16px;
+}
+#content textarea{
+	width:450px;
+	height: 300px;
+	font-size: 16px;
+}
+#contact input{
+	font-size: 16px;
+}
+#category{
+	clear: both;
+}
+#submit{
+	clear: both;
+}
+#view{
+	width:500px;
+	float: left;
+}
+#view div{
+	float: left;
+}
+#view_title{
+	width: 500px;
+	font-size: 16px;
+	margin-top: 10px;
+}
+#view_content{
+	width: 500px;
+	font-size: 14px;
+	margin-top: 10px;
+}
+#view_contact{
+	width: 500px;
+	font-size: 14px;
+	margin-top: 10px;
+}
+#view_category{
+	width: 1500px;
+	font-size: 14px;
+	margin-top: 10px;
+}
+</style>
+</head>
+<body>
+<div id="input_area">
+	<form id="myform">
+		<div id="title">标题：<input type="text" name="title" /></div>
+		<div id="content">信息内容：<textarea name="content"></textarea></div>
+		<div id="contact">电话：<input type="text" name="contact" /></div>
+		<div id="category"><?php
+		foreach ($cat_list as $value) { ?>
+		 <input type="radio" name="cat_id" value="<?php echo $value['cat_id']; ?>" /><?php echo $value['cat_name']; ?>
+		 <?php } ?></div>
+		<div id="submit"><input type="submit" value="提交" /></div>
+	</form>
+</div>
+<div id="view">
+	<div id="view_title"></div>
+	<div id="view_content"></div>
+	<div id="view_contact"></div>
+	<div id="view_category"></div>
+</div>
+</body>
+</html>

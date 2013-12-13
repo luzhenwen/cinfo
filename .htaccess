@@ -1,0 +1,16 @@
+<IfModule rewrite_module>
+
+RewriteEngine On
+
+RewriteRule ^(\d+)$ info.php?id=$1
+
+RewriteRule ^release$ release.php
+
+RewriteRule ^page/(\d+)$ index.php?page=$1
+
+RewriteRule ^category/(\d+)$ index.php?cat_id=$1
+
+RewriteRule ^category/(\d+)/page/(\d+)$ index.php?cat_id=$1&page=$2
+ErrorDocument 404 /404.html
+Options -Indexes
+</IfModule>

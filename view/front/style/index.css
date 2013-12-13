@@ -1,0 +1,168 @@
+
+#main{
+    width:960px;
+    float:left;
+}
+
+#main #empty_info{
+    float:left;
+    _display:inline;
+    color:#444;
+    margin-left:50px;
+    margin-top:50px;
+    font-size:18px;
+}
+
+#main a{
+    height: 200px;
+    cursor: pointer;
+}
+
+#main a .box{
+    float:left;
+    _display:inline;
+    margin-left:10px;
+    margin-top:10px;
+    width:225px;
+    height:200px;
+    border:1px solid #cccccc;
+    background:#fcfcfc;
+    box-shadow:0px 0px 5px #888888;
+}
+
+#main a .ordertop{
+    *border: 1px solid #C64038;
+    border: 1px solid #C64038\0;
+    box-shadow: 0px 0px 5px 1px #C64038;
+    background-image: url('/view/front/image/ordertop.png');
+    background-repeat: no-repeat;
+    background-position: top right;
+}
+
+#main a{
+    text-decoration:none;
+}
+
+#main a:link{
+    color:#464646;
+}
+
+#main a:hover{
+    color:#464646;
+}
+
+#main a:active{
+    color:#464646;
+}
+
+#main a:visited{
+    color:#464646;
+}
+
+#main .box .title{
+    height:35px;
+    width:225px;
+    border-bottom:1px dashed #cdcdcd;
+    text-align:center;
+}
+
+#main .box .title p{
+    font-size:18px;
+    line-height:36px;
+    width:225px;
+    height: 35px;
+    overflow: hidden;
+    text-decoration:none;
+    font-weight:bold;
+    color:#464646;
+}
+
+
+#main .box .content{
+    width:208px;
+    height:121px;
+    margin-left:10px;
+    margin-top:2px;
+    font-size:13px;
+    line-height:20px;
+    color:#464646;
+    word-wrap: break-word;
+    word-break: normal;
+}
+
+#main .box .content p{
+
+}
+
+#main .box .contact{
+    border-top:1px dashed #cdcdcd;
+    font-size:14px;
+    height:35px;
+    width:225px;
+}
+
+#main .box .contact span , #main .box .contact img{
+    margin-top:5px;
+}
+
+#main .box .contact span{
+    _display:inline;
+    float:left;
+    margin-left:2px;
+    line-height:20px;
+    font-size:14px;
+}
+
+#main .box .contact img{
+    _display:inline;
+    float:left;
+}
+
+#page{
+    _display:inline;
+    margin:20px auto;
+    float:left;
+    text-align:center;
+}
+
+#page a{
+    text-decoration:none;
+    display:block;
+    float:left;
+    width:28px;
+    height:20px;
+    border:1px solid #ccc;
+    border-radius:3px;
+    margin:3px;
+    text-align:center;
+}
+
+#page a.chpage{
+    text-decoration:none;
+    display:block;
+    float:left;
+    width:60px;
+    height:20px;
+    border:1px solid #ccc;
+    border-radius:3px;
+    margin:3px;
+    text-align:center;
+}
+
+
+
+#page a span{
+    line-height:22px;
+    color:#333;
+    font-size:14px;
+}
+
+
+#page a.curr{
+    background-color:#f18c19;
+}
+
+#page a.curr span{
+    color:#ffffff;
+}
+

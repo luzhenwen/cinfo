@@ -1,0 +1,26 @@
+<?php include(ROOT . 'view/front/templates/head.html'); ?>
+    <div id="main">
+        <?php foreach($data as $i){?>
+        <a href="/<?php echo $i['info_id']; ?>">
+            <div class="box <?php echo $i['post_order'] >= 1 ? 'ordertop' : '' ?>">
+                <div class="title">
+                    <p><?php echo $i['title'];echo !empty($i['pic_address']) ? '<span style="color:orange;font-size:18px">[图]</span>' : ''; ?></p>
+                </div>
+                <div class="content">
+                    <?php echo mb_substr($i['content'],0,96,'utf-8'); ?>
+                </div>
+                <div class="contact"><span>联系电话：</span><img src="/<?php echo $i['contact_img']; ?>" /> </div>
+            </div>
+        </a>
+        <?php }?>
+
+    </div>
+
+    <div id="page">
+    <?php echo $page_list; ?>
+    </div>
+    <script type="text/javascript">
+        $('#page').css('marginLeft', ($('body').width() - $('#page').width()) / 2);
+    </script>
+
+    <?php include(ROOT . 'view/front/templates/foot.html'); ?>

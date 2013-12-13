@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>屏蔽词汇列表</title>
+<meta name="robots" content="noindex, nofollow">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="../view/admin/js/filter.js"></script>
+</head>
+<body>
+<table>
+	<thead>
+		<td>词语</td>
+		<td>管理</td>
+	</thead>
+	<tbody>
+		<?php foreach($data as $k=>$v){?>
+		<tr>
+			<td>
+				<input type="text" name="val<?php echo $v['filter_id']; ?>" value="<?php echo $v['filter_word']; ?>" />
+			</td>
+			<td>
+				<input type="button" value="编辑" filter_id="<?php echo $v['filter_id']; ?>" name="edit" /><input type="button" value="删除" filter_id="<?php echo $v['filter_id']; ?>" name="delete" />
+			</td>
+		</tr>
+		<?php } ?>
+		<tr>
+			<td><input type="text" value="" name="newval" /></td>
+			<td><input type="button" value="增加" name="newbtn" /></td>
+		</tr>
+	</tbody>
+</table>
+</body>
+</html>

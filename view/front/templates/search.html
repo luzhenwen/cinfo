@@ -1,0 +1,32 @@
+<?php include(ROOT . 'view/front/templates/head.html'); ?>
+    <div id="main">
+        <?php if(isset($empty_info) && $empty_info == true){?>
+            <div id="empty_info">暂时找不到类似<em style="font-size:18px;">“<?php echo $key_word; ?>”</em>的信息，过一段时间再来试试吧~</div>
+        <?php }else{ ?>
+            <?php foreach($data as $i){?>
+            <?php
+                $i['ntitle'] = str_ireplace($key_word,'<em style="font-size:20px">' . $key_word . '</em>',$i['title']);
+                $i['ncontent'] = str_ireplace($key_word,'<em style="font-size:12px">' . $key_word . '</em>',$i['content']);
+            ?>
+                <a href="./<?php echo $i['info_id']; ?>">
+                    <div class="box">
+                        <div class="title">
+                            <p><?php echo $i['ntitle'];echo !empty($i['pic_address']) ? '<span style="color:orange;font-size:18px">[图]</span>' : ''; ?></p>
+                        </div>
+                        <div class="content">
+                            <p><?php echo mb_substr($i['ncontent'],0,96,'utf-8'); ?></p>
+                        </div>
+                        <div class="contact"><span>联系电话：</span><img src="<?php echo $i['contact_img']; ?>" /> </div>
+                    </div>
+                </a>
+            <?php }?>
+        <?php }?>
+
+    </div>
+    <div id="page">
+    <?php echo $page_nav; ?>
+    </div>
+    <script type="text/javascript">
+        $('#page').css('marginLeft', ($('body').width() - $('#page').width()) / 2);
+    </script>
+    <?php include(ROOT . 'view/front/templates/foot.html'); ?>

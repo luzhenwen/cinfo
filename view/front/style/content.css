@@ -1,0 +1,178 @@
+#left_content,#right_content{
+    float:left;
+    margin-top:10px;
+}
+#left_content{
+    width:760px;
+}
+
+#right_content{
+    width:196px;
+}
+
+#left_content #top_box{
+    width:725px;
+    border-bottom:1px solid #b7b7b7;
+    margin-left:15px;
+    margin-top:10px;
+    float: left;
+    _display:inline;
+}
+
+#left_content #top_box #title{
+
+}
+
+#left_content #top_box #title h1{
+    font-size:22px;
+    font-weight:bold;
+    color:#464646;
+}
+
+#left_content #top_box #info{
+    width:725px;
+    height:25px;
+    margin-top:10px;
+    float: left;
+    _display:inline;
+}
+
+#left_content #top_box #info #time,#left_content #top_box #info #click,#left_content #top_box #info #zone{
+    color:#7e7e7f;
+    font-size:14px;
+    float:left;
+}
+
+#left_content #top_box #info #zone{
+    margin-left:20px;
+}
+
+#left_content #top_box #info #click{
+    margin-left:20px;
+}
+
+#left_content #top_box #info #operate{
+    float:right;
+    margin-right:20px;
+    background-image:url(../image/operate.png);
+    background-repeat:no-repeat;
+    background-position:top left;
+    width:70px;
+}
+
+#left_content #top_box #info #operate ul{
+    margin-left:20px;
+    font-size:14px;
+}
+
+#left_content #top_box #info #operate ul li{
+    list-style:none;
+    display:none;
+    height:20px;
+}
+
+#left_content #top_box #info #operate ul li a{
+    text-decoration:none;
+    background:none;
+    color:#464646;
+}
+
+#left_content #top_box #info #operate ul li.operate_display{
+    display:block;
+}
+
+#left_content #bottom_box{
+    width:725px;
+    margin-left:15px;
+    margin-top:10px;
+    float:left;
+}
+
+#left_content #bottom_box p{
+    font-size:18px;
+    z-index: 1;
+    word-wrap: break-word;
+    word-break: normal;
+}
+
+#left_content #bottom_box #contact{
+    font-size:18px;
+}
+
+#delete{
+    width:450px;
+    height:130px;
+    position:absolute;
+    top:0px;
+    left:0px;
+    z-index:9999;
+    background:#fff;
+    font-size:14px;
+    display:none;
+}
+
+#screen{
+    position:absolute;
+    background:#000;
+    left:0;
+    top:0;
+    z-index:9998;
+    opacity:0.3;
+    filter:alpha(opacity=30);
+}
+
+#delete #head{
+    float:left;
+    width:450px;
+    height:30px;
+    background:#F9D7C2;
+}
+
+#delete #head #tips{
+    float:left;
+    _display:inline;
+    font-size:20px;
+    margin-left:190px;
+    line-height:30px;
+}
+
+#delete #head #cancel{
+    float:right;
+    margin-right:10px;
+    margin-top:5px;
+    cursor:pointer;
+}
+
+#delete #input_area{
+    float:left;
+    _display:inline;
+    font-size:16px;
+    margin-left:90px;
+    margin-top:35px;
+}
+
+#delete #input_area input{
+    border:1px solid black;
+    height:20px;
+    width:120px;
+    font-size:20px;
+}
+
+#delete #del_sub{
+    _display:inline;
+    float:left;
+    margin-top:30px;
+    margin-left:20px;
+    width:67px;
+    height:28px;
+    background:url(../image/delete.png);
+    cursor:pointer;
+}
+
+#delete #del_msg{
+    display: none;
+    margin-top: 60px;
+    text-align: center;
+    color: red;
+    font-size: 20px;
+}

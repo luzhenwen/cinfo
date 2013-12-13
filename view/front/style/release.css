@@ -1,0 +1,178 @@
+
+#release_fm{
+    margin-left:200px;
+    margin-top:30px;
+}
+
+#release_fm p{
+    margin-left:170px;
+    font-size:30px;
+    font-weight:bold;
+    color:#333;
+}
+
+#title_box,#content_box,#contact_box,#chkcode_box,#category_box,#deltime_box,#delkey_box{
+    margin-top:20px;
+    clear: both;
+}
+
+#title_input,#content_input,#contact_input,#chkcode_input,#category_input,#deltime_input,#delkey_input{
+    background:#f5f5f5;
+    border:1px solid #C98381;
+    border-radius:3px;
+}
+
+#category_input{
+    font-size:18px;
+}
+
+#category_input option{
+    font-size:18px;
+}
+
+#release_fm .label{
+    font-size:18px;
+    color:#333;
+}
+
+#title_input,#contact_input,#chkcode_input,#delkey_input{
+    height:28px;
+    font-size:26px;
+}
+
+#contact_input,#chkcode_input,#delkey_input{
+    width: 200px;
+}
+
+#title_input{
+    width: 240px;
+}
+
+#deltime_input{
+    font-size:18px;
+}
+
+#deltime_input option{
+    font-size:18px;
+}
+
+#content_box .omsg{
+    display: block;
+    float: left;
+    color: red;
+    font-size: 20px;
+}
+
+#category_msg, #title_msg, #content_msg, #contact_msg, #deltime_msg, #delkey_msg{
+    display: none;
+    color: red;
+    font-size: 16px;
+}
+
+#content_input{
+    font-size:20px;
+    width:500px;
+    float: left;
+}
+
+#content_box #content_msg span{
+    font-size:14px;
+    color:#333;
+}
+
+#chkcode_input{
+    color:#999;
+    font-size:20px;
+}
+
+#chkcode_box img{
+    cursor: pointer;
+}
+
+#release_submit{
+    width:80px;
+    height:50px;
+    border:1px solid #c98381;
+    border-radius:3px;
+    margin-top:10px;
+    font-size:22px;
+    cursor: pointer;
+}
+
+#srceen{
+    display: none;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    opacity: 0.3;
+    filter: alpha(opacity=30);
+    z-index: 9998;
+    background-color: #333;
+}
+
+#response_msg{
+    display: none;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 400px;
+    height: 150px;
+    background-color: #f6f6f1;
+    box-shadow: 0px 0px 15px 2px #888;
+    border-radius: 2px;
+    z-index: 9999;
+    text-align: center;
+}
+
+#response_msg #close{
+    cursor: pointer;
+    width: 12px;
+    height: 12px;
+    background: url(../image/close.png) top left no-repeat;
+    float:right;
+    margin-right: 15px;
+    margin-top: 10px;
+    _display:inline;
+}
+
+#response_msg p{
+    margin-top: 55px;
+    font-size: 20px;
+    color: green;
+}
+
+#filearea{
+    float: left;
+    width: 600px;
+    margin-top:20px;
+}
+
+#filearea #pic_list li{
+    float: left;
+    list-style: none;
+    margin-left: 5px;
+}
+
+#filearea #pic_list div{
+    text-align: center;
+}
+
+#filearea .filedetail{
+    display: block;
+    text-align: center;
+    font-size: 14px;
+}
+#filearea .filedel{
+    cursor: pointer;
+    margin-left: 10px;
+    display: inline;
+    font-size: 14px;
+    color: #666;
+}
+
+#filearea span{
+    font-size: 14px;
+    margin-bottom: 15px;
+    display: block;
+    margin-bottom: 5px;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title><?php echo $title; ?></title>
+<meta http-equiv="Content-Type" Content="text/html;charset=utf-8" />
+<?php if(STYLE == 'content'){ ?>
+<meta name="Keywords" content="扶绥<?php echo $info_row['title']; ?> 扶绥信息网，扶绥论坛，扶绥论坛网，扶绥信息，扶绥租房，扶绥房产，扶绥二手房，扶绥招聘，扶绥商业，扶绥铺面转让，扶绥铺面招租，扶绥房产信息，扶绥人才网，扶绥供求信息，广西扶绥县，扶绥二手，扶绥二手车，扶绥本地信息" />
+<?php }else if(STYLE == 'index'){ ?>
+<?php if(isset($cat_name) && isset($cat_id) && is_numeric($cat_id)){?>
+<meta name="Keywords" content="扶绥<?php echo $cat_name ?> 扶绥信息网，扶绥论坛，扶绥论坛网，扶绥信息，扶绥租房，扶绥房产，扶绥二手房，扶绥招聘，扶绥商业，扶绥铺面转让，扶绥铺面招租，扶绥房产信息，扶绥人才网，扶绥供求信息，广西扶绥县，扶绥二手，扶绥二手车，扶绥本地信息" />
+<?php }else{?>
+<meta name="Keywords" content="扶绥信息网，扶绥论坛，扶绥论坛网，扶绥信息，扶绥租房，扶绥房产，扶绥二手房，扶绥招聘，扶绥商业，扶绥铺面转让，扶绥铺面招租，扶绥房产信息，扶绥人才网，扶绥供求信息，广西扶绥县，扶绥二手，扶绥二手车，扶绥本地信息" />
+<?php }} ?>
+
+<meta name="Description" content="在扶绥信息网，您可以免费查找本地最新最全的二手物品交易、二手车买卖、房屋租售、宠物、招聘、兼职、求职、生活服务信息。还能免费发布这些信息。" />
+
+<link rel="stylesheet" type="text/css" href="/view/front/style/<?php echo STYLE; ?>.css" />
+<link rel="stylesheet" type="text/css" href="/view/front/style/head.css" />
+<script type="text/javascript" src="http://libs.baidu.com/jquery/1.8.2/jquery.min.js"></script>
+<script type="text/javascript" src="/view/front/js/head.js"></script>
+<script type="text/javascript" src="/view/front/js/<?php echo STYLE; ?>.js"></script>
+</head>
+<body>
+    <div id="head">
+        <div id="logo"><a href="/"><img src="/view/front/image/logo.png" title="返回首页" /></a></div>
+        <div id="search">
+            <form id="search_fm" action="/search.php" method="GET">
+            <input type="text" name="search_input" class="search_input" <?php echo isset($_GET['search_input'])? 'value=' . stripslashes($_GET['search_input']) : '' ?> />
+            <input type="submit" value="" class="search_button" id="search_button" />
+            </form>
+        </div>
+        <div id="release">
+            <a href="/release" class="fabu"><span>免费发布信息</span></a>
+        </div>
+    </div>
+    <div class="blank"></div>
+    <div class="blank"></div>
+    <div id="nav">
+        <div id="sale_house" class="nav"><a href="/category/24"></a></div>
+        <div class="part"></div>
+        <div id="house" class="nav"><a href="/category/23"></a></div>
+        <div class="part"></div>
+        <div id="front" class="nav"><a href="/category/25"></a></div>
+        <div class="part"></div>
+        <div id="job" class="nav"><a href="/category/26"></a></div>
+        <div class="part"></div>
+        <div id="local" class="nav"><a href="/category/27"></a></div>
+        <div class="part"></div>
+        <div id="info" class="nav"><a href="/category/28"></a></div>
+        <div class="part"></div>
+        <div id="used" class="nav"><a href="/category/29"></a></div>
+    </div>
+    <div class="blank"></div>
+    <div class="blank"></div>
